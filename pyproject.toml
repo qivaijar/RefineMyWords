@@ -10,11 +10,12 @@ python = "^3.10"
 fastapi = "^0.115.2"
 uvicorn = "^0.32.0"
 torch = "^2.4.1"
-transformers = "^4.45.2"
+happytransformer = "^3.0.0"
 
 
 [tool.poetry.group.dev.dependencies]
 autopep8 = "^2.3.1"
+requests = "^2.32.3"
 
 [build-system]
 requires = ["poetry-core"]

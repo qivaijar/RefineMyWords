@@ -16,6 +16,7 @@ happytransformer = "^3.0.0"
 [tool.poetry.group.dev.dependencies]
 autopep8 = "^2.3.1"
 requests = "^2.32.3"
+fastapi-cli = "^0.0.5"
 
 [build-system]
 requires = ["poetry-core"]

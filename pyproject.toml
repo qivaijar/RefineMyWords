@@ -10,8 +10,16 @@ python = "^3.10"
 fastapi = "^0.115.2"
 uvicorn = "^0.32.0"
 torch = "^2.4.1"
-transformers = "^4.45.2"
+happytransformer = "^3.0.0"
+gradio = "^5.1.0"
 
+
+[tool.poetry.group.dev.dependencies]
+requests = "^2.32.3"
+fastapi-cli = "^0.0.5"
+autopep8 = "^2.3.1"
+pytest = "^8.3.3"
+httpx = "^0.27.2"
 
 [build-system]
 requires = ["poetry-core"]

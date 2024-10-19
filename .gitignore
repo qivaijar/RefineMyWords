@@ -162,3 +162,5 @@ cython_debug/
 #.idea/
 
 .gradio
+frontend/.gitattributes
+frontend/README.md

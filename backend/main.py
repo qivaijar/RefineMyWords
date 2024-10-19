@@ -14,7 +14,7 @@ class SentenceRequest(BaseModel):
     sentence: str
 
 
-@app.post("/refine/")
+@app.post("/refine")
 async def refine_sentence(request: SentenceRequest):
     # Prepare the input sentence
     # Currently, this model can only handle simple grammar correction
@@ -28,6 +28,5 @@ async def refine_sentence(request: SentenceRequest):
     refined_sentence = result.text
 
     return {
-        "original": request.sentence,
-        "refined": refined_sentence
+        "refined_sentence": refined_sentence
     }

@@ -1,25 +1,15 @@
-import requests
+from fastapi.testclient import TestClient
+from .main import app
 
-# Define the API endpoint
-# Change this to your deployment URL if needed
-url = "http://127.0.0.1:8000/refine/"
 
-# Prompt for the input sentence
-input_sentence = input("Please enter the text you want to refine:\n ")
+# Create test client object
+client = TestClient(app)
 
-# Prepare the test data
-data = {
-    "sentence": input_sentence
-}
 
-# Send a POST request to the API
-response = requests.post(url, json=data)
-
-# Check the response
-if response.status_code == 200:
-    result = response.json()
-
-    print("\nOriginal Sentence:", result["original"])
-    print("Refined Sentence:", result["refined"])
-else:
-    print("Error:", response.status_code, response.text)
+def test_refine_sentence():
+    # Test case for a valid sentence
+    response = client.post("/refine",
+                           json={"sentence": "yesterday i go to the market"})
+    assert response.status_code == 200
+    assert response.json() == {
+        "refined_sentence": "Yesterday I went to the market."}

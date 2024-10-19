@@ -15,11 +15,12 @@ class SentenceRequest(BaseModel):
 
 
 @app.post("/refine/")
-async def correct_sentence(request: SentenceRequest):
+async def refine_sentence(request: SentenceRequest):
     # Prepare the input sentence
+    # Currently, this model can only handle simple grammar correction
     input_sentence = "grammar: " + request.sentence
 
-    # Generate the corrected output from the model
+    # Generate the refined output from the model
     with torch.no_grad():
         result = happy_tt.generate_text(input_sentence, args=tt_settings)
 

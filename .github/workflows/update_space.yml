@@ -25,4 +25,6 @@ jobs:
           SPACE_NAME: ${{ vars.SPACE_NAME }}
         run: |
           # Force push the current state of the branch to the second repo
+          git remote -v
+          git status
           git push https://$HF_USERNAME:$HF_TOKEN@huggingface.co/spaces/$HF_USERNAME/$SPACE_NAME main --force

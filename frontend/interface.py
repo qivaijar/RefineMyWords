@@ -13,7 +13,7 @@ with Blocks() as i_face:
         Start typing sentences you'd like to refine.
         """)
 
-    inp = Textbox(label="Input your original, unrefined text:")
+    inp = Textbox(label="Input your original text:")
     out = Textbox(label="Refined version:")
 
     inp.change(refine_word, inp, out)

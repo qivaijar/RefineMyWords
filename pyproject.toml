@@ -7,7 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-fastapi = "^0.115.2"
+fastapi = {extras = ["standard"], version = "^0.115.4"}
 uvicorn = "^0.32.0"
 torch = "^2.4.1"
 happytransformer = "^3.0.0"

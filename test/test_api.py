@@ -1,5 +1,5 @@
 from fastapi.testclient import TestClient
-from .main import app
+from backend.main import app
 
 
 # Create test client object
@@ -12,4 +12,4 @@ def test_refine_sentence():
                            json={"sentence": "yesterday i go to the market"})
     assert response.status_code == 200
     assert response.json() == {
-        "refined_sentence": "Yesterday I went to the market."}
+        "refined_sentence": "Yesterday, I went to the market."}

@@ -1,4 +1,4 @@
-from gradio import Blocks, Markdown, Textbox, Button
+from gradio import Blocks, Markdown, Textbox, Button, Row, Column
 import requests
 from dotenv import load_dotenv
 import os
@@ -30,13 +30,16 @@ with Blocks() as i_face:
         # RefineMyWords
         Start typing sentences you'd like to refine.
         """)
+    with Row():
+        with Column(scale=1):
+            input_text = Textbox(label="Input your original text:", lines=10)
+        with Column(scale=0):
+            submit_button = Button(value="Refine My Words!", variant='primary')
+        with Column(scale=1):
+            output_text = Textbox(label="Refined version:", lines=10)
 
-    inp = Textbox(label="Input your original text:")
-    submit_btn = Button("Refine My Words!")
-    out = Textbox(label="Refined version:")
-
-    # Link the button to the function
-    submit_btn.click(refine_word, inputs=inp, outputs=out)
+    # Refine the text!
+    submit_button.click(refine_word, inputs=input_text, outputs=output_text)
 
 if __name__ == "__main__":
     i_face.launch(share=True)

@@ -15,6 +15,7 @@ app = FastAPI()
 model = ChatOpenAI(model="gpt-3.5-turbo")
 
 
+# Data class for the input
 class SentenceRequest(BaseModel):
     sentence: str
 

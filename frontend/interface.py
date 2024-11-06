@@ -19,7 +19,7 @@ def refine_word(input_text: str) -> str:
         response.raise_for_status()
         result = response.json().get("refined_sentence", "Error: No refined text returned.")
     except requests.exceptions.RequestException as e:
-        result = f"Error: {e}"
+        result = f"Cannot connect to the API service"
 
     return result
 

@@ -20,6 +20,11 @@ class SentenceRequest(BaseModel):
     sentence: str
 
 
+@app.get("/")
+def read_root():
+    return {"message": "RefineMyWords is now live!"}
+
+
 @app.post("/refine")
 async def refine_sentence(request: SentenceRequest):
     # Prepare the input sentence messages

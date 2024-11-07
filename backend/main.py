@@ -21,7 +21,7 @@ class SentenceRequest(BaseModel):
 
 
 @app.get("/", methods=["GET", "HEAD"])
-def read_root():
+async def read_root():
     return {"message": "RefineMyWords is now live!"}
 
 

@@ -21,4 +21,4 @@ RefineMyWords takes user input text, pass it through a machine learning pipeline
 
 ## How to access?
 
-To test out this app, please visit the Hugging Face Space using [this link](https://huggingface.co/spaces/qivaijar/RefineMyWords). Please note that the first request may take slightly longer (approximately 50 seconds to 1 minute) to process as the service is not live during periods of inactivity and requires time to start up for the initial request. Subsequent requests should process without any delays.
+To test out this app, please visit the Hugging Face Space using [this link](https://huggingface.co/spaces/qivaijar/RefineMyWords). Please note that the first request may take slightly longer (approximately 3 to 5 mintues) to process as the service is not live during periods of inactivity and requires time to start up for the initial request. Subsequent requests should process without any delays.

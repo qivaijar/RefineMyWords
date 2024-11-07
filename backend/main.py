@@ -20,7 +20,7 @@ class SentenceRequest(BaseModel):
     sentence: str
 
 
-@app.get("/", methods=["GET", "HEAD"])
+@app.get("/")
 async def read_root():
     return {"message": "RefineMyWords is now live!"}
 
